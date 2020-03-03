@@ -1,0 +1,1 @@
+nohup python3 -u  hmall2.py &
