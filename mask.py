@@ -65,7 +65,7 @@ def email():
     #ddb_pk = store_id+"/"+rack_no+"/"+inventory_no
     # Creates the text, subject, 'from', and 'to' of the message.
     msg = MIMEText(my_ip_a)
-    msg['Subject'] = '마스크 재고생김' 
+    msg['Subject'] = '[welkeepsmall 마스크 재고생김' 
 
     msg['From'] = gmail_user
 
@@ -92,7 +92,7 @@ def job():
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--no-sandbox')
         #print('url driver1')
-        driver = webdriver.Chrome('/home/mask/chromedriver', chrome_options=options)
+        driver = webdriver.Chrome('/home/newface/mask/chromedriver', chrome_options=options)
         #print('url driver2')
         #driver = webdriver.Chrome('C:/Users/Administrator/PycharmProjects/broccoli/chromedriver.exe')
         driver.implicitly_wait(10)
@@ -113,7 +113,7 @@ def job():
 
         print('soldout',a)
         driver.quit()  
-        if 5 < a < 23:
+        if 5 < a < 24:
             print("email",a)
             email()
             
@@ -130,7 +130,7 @@ def job():
 #    schedule.run_pending()
 #    time.sleep(5)
 
-schedule.every(1).minutes.do(job) #면세점
+schedule.every(0.5).minutes.do(job) #면세점
 
 while True:
     schedule.run_pending()
